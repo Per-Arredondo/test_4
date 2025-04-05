@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Médica</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://github.com/Per-Arredondo/Clinica_medica/blob/main/Fondo%20JPG.jpeg?raw=true');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      backdrop-filter: blur(2px);
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    header img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    .portada {
+      width: 100%;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+    h1, h2, h3 {
+      color: #2a3f54;
+      text-align: center;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .valores ul {
+      list-style: none;
+      padding: 0;
+    }
+    .valores li::before {
+      content: '✔️';
+      margin-right: 10px;
+    }
+    .accordion button {
+      width: 100%;
+      background: #e3f2fd;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      margin: 5px 0;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .accordion button i {
+      margin-right: 10px;
+    }
+    .panel {
+      display: none;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .form-group {
+      position: relative;
+    }
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #888;
+    }
+    input, select, textarea {
+      padding: 10px 10px 10px 35px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 100%;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #mensaje {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://github.com/Per-Arredondo/Clinica_medica/blob/main/logo%20ejemplo.png?raw=true" alt="Logo Clínica">
+    </header>
+    <img class="portada" src="https://github.com/Per-Arredondo/Clinica_medica/blob/main/ChatGPT%20Image%202%20abr%202025,%2016_04_57.png?raw=true" alt="Portada">
+
+    <section>
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos una clínica médica comprometida con la salud y el bienestar de las personas, ofreciendo servicios con enfoque humano y profesional.</p>
+    </section>
+
+    <section>
+      <h2>Misión</h2>
+      <p>Brindar atención médica integral, accesible y de calidad.</p>
+    </section>
+
+    <section>
+      <h2>Visión</h2>
+      <p>Ser una clínica referente por excelencia, trato humano y compromiso con la salud preventiva.</p>
+    </section>
+
+    <section class="valores">
+      <h2>Valores</h2>
+      <ul>
+        <li>Ética profesional</li>
+        <li>Empatía</li>
+        <li>Diversidad</li>
+        <li>Honestidad</li>
+        <li>Responsabilidad</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Especialidades Médicas</h2>
+      <div class="accordion">
+        <button><i class="fas fa-stethoscope"></i>Medicina General</button>
+        <div class="panel"><p>Atención integral para todas las edades, orientación diagnóstica y prevención de enfermedades.</p></div>
+        <button><i class="fas fa-venus"></i>Ginecología</button>
+        <div class="panel"><p>Salud reproductiva, atención prenatal y seguimiento ginecológico.</p></div>
+        <button><i class="fas fa-toilet"></i>Urología</button>
+        <div class="panel"><p>Diagnóstico y tratamiento de afecciones del sistema urinario y reproductor masculino.</p></div>
+        <button><i class="fas fa-baby"></i>Pediatría</button>
+        <div class="panel"><p>Cuidado médico integral para niñas, niños y adolescentes.</p></div>
+        <button><i class="fas fa-heartbeat"></i>Cardiología</button>
+        <div class="panel"><p>Prevención, diagnóstico y tratamiento de enfermedades del corazón.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Agendar una cita</h2>
+      <form id="formulario">
+        <div class="form-group"><i class="fas fa-user"></i><input type="text" name="nombre" placeholder="Nombre completo" required></div>
+        <div class="form-group"><i class="fas fa-phone"></i><input type="tel" name="telefono" placeholder="Teléfono" required></div>
+        <div class="form-group"><i class="fas fa-envelope"></i><input type="email" name="correo" placeholder="Correo electrónico" required></div>
+        <div class="form-group"><i class="fas fa-venus-mars"></i><select name="sexo" required>
+          <option value="">Sexo</option>
+          <option>Femenino</option>
+          <option>Masculino</option>
+          <option>Otro</option>
+        </select></div>
+        <div class="form-group"><i class="fas fa-user-md"></i><select name="especialidad" required>
+          <option value="">Especialidad</option>
+          <option>Medicina General</option>
+          <option>Ginecología</option>
+          <option>Urología</option>
+          <option>Pediatría</option>
+          <option>Cardiología</option>
+        </select></div>
+        <div class="form-group"><i class="fas fa-calendar-alt"></i><input type="date" name="fecha" required></div>
+        <div class="form-group"><i class="fas fa-clock"></i><input type="time" name="hora" required></div>
+        <div class="form-group"><i class="fas fa-comment"></i><textarea name="comentarios" rows="3" placeholder="Comentarios adicionales..."></textarea></div>
+        <button type="submit">Enviar</button>
+        <div id="mensaje"></div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    // Acordeón
+    document.querySelectorAll(".accordion button").forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        const panel = btn.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    // Envío del formulario
+    const form = document.getElementById("formulario");
+    const mensaje = document.getElementById("mensaje");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const datos = new FormData(form);
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwqkIOnrvtAlrmEtrGKkGku2HvRWF5fkBIkEIxtMuOcVLEMJiTs28IfXWPCAhge6m1Kow/exec", {
+          method: "POST",
+          body: datos
+        });
+        if (res.ok) {
+          mensaje.innerHTML = "✅ Gracias, tu cita ha sido agendada.<br>⏳ Redirigiendo al inicio...<br>🎉 Te contactaremos pronto.";
+          setTimeout(() => {
+            mensaje.innerHTML = "";
+            form.reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 5000);
+        }
+      } catch (err) {
+        mensaje.innerText = "❌ Error al enviar. Intenta más tarde.";
+      }
+    });
+  </script>
+</body>
+</html>
